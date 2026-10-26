@@ -1,15 +1,15 @@
-Password = "Heslo"
-Attempts = 5
+password = "Heslo"
+attempts = 3
 
-while True:
-    Guess = input(":")
-    if(Guess == Password):
+for attempt in range(attempts, 0, -1):
+    guess = input("Zadejte heslo: ")
+    
+    if guess == password:
         print("Správně")
         break
-    else: 
-        Attempts -= 2
-        if(Attempts == 0):
-            print("Zablokované heslo")
-            break
-        else:
-            print(f"Zbývá ještě {Attempts} Pokusů ")
+        
+    remaining = attempt - 1
+    if remaining == 0:
+        print("Zablokované heslo")
+    else:
+        print(f"Zbývá ještě {remaining} pokusů.")
